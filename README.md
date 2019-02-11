@@ -18,11 +18,7 @@ date || credit || debit || balance
 User Stories
 
 As a user
-So I can have a bank account
-I can open an account
-
-As a user
-So I don't have to carry cash
+To keep my money safe
 I can deposit cash into my account
 
 As a user
