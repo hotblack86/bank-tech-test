@@ -15,4 +15,9 @@ describe Account do
     expect { account.withdraw(200) }.to output("\"You withdrew £200\"\n").to_stdout
   end
 
+  it 'Feature 3 - User can make view account balance' do
+    account.deposit(500)
+    account.withdraw(200)
+    expect { account.show_balance }.to output("\"Available Funds: £300\"\n").to_stdout
+  end
 end

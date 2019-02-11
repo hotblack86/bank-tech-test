@@ -17,5 +17,6 @@ attr_reader :balance
   end
 
   def show_balance
+    p "Available Funds: £#{@balance}"
   end
 end
