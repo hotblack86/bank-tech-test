@@ -9,4 +9,10 @@ describe Account do
     expect { account.deposit(500) }.to output("\"You deposited £500\"\n").to_stdout
   end
 
+  it 'Feature 2 - User can make a withdrawal' do
+    account.deposit(500)
+    account.withdraw(200)
+    expect { account.withdraw(200) }.to output("\"You withdrew £200\"\n").to_stdout
+  end
+
 end

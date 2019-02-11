@@ -11,6 +11,11 @@ attr_reader :balance
     p "You deposited £#{amount}"
   end
 
+  def withdraw(amount)
+    @balance -= amount
+    p "You withdrew £#{amount}"
+  end
+
   def show_balance
   end
 end
