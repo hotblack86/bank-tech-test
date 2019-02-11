@@ -6,14 +6,14 @@ attr_reader :balance
     @balance = balance
   end
 
-  def deposit(amount)
+  def deposit(amount, date = Time.now)
     @balance += amount
-    p "You deposited £#{amount}"
+    p "You deposited £#{amount} on #{date}"
   end
 
-  def withdraw(amount)
+  def withdraw(amount, date = Time.now)
     @balance -= amount
-    p "You withdrew £#{amount}"
+    p "You withdrew £#{amount} on #{date}"
   end
 
   def show_balance

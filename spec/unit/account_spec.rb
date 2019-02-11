@@ -2,6 +2,8 @@ require 'account.rb'
 
 describe Account do
   let(:account) { Account.new }
+  let(:date)  { Timecop.freeze(Time.now) }
+
 
   it 'Initializes with an empty account' do
     expect(account.balance).to eq(0)
