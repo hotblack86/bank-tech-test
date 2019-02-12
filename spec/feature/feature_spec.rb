@@ -24,20 +24,11 @@ describe Account do
     expect { account.show_balance }.to output("\"Available Funds: £300\"\n").to_stdout
   end
 
-  # it 'Feature 4 - User can view statement with with deposits 
-  #   and withdrawals in reverse chronological order' do
-  #   account.deposit(500, :date)
-  #   account.withdraw(200, :date)
-  #   expect { account.print_statement }.to output("
-  #      ++---------------------------+--------+-------+---------+
-  #      +|                      Statement                       |
-  #      ++---------------------------+--------+-------+---------+
-  #      +| Date                      | Credit | Debit | Balance |
-  #      ++---------------------------+--------+-------+---------+
-  #      +| 2019-02-11 00:00:00 +0000 |        | 200   | 300     |
-  #      +| 2019-02-11 00:00:00 +0000 | 500    |       | 500     |
-  #      ++---------------------------+--------+-------+---------+
-  #     ").to_stdout
-  # end
+  it 'Feature 4 - User can view statement with with deposits 
+    and withdrawals in reverse chronological order' do
+    account.deposit(500, :date)
+    account.withdraw(200, :date)
+    expect { account.print_statement }.to output.to_stdout
+  end
 
 end

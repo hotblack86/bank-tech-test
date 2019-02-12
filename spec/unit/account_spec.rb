@@ -26,9 +26,9 @@ describe Account do
     expect(account.balance).to eq(300)
   end
 
-  # it 'Adds transactions to array' do
-  #   account.deposit(500, date.strftime("%d/%m/%Y"))
-  #   account.withdraw(200, date.strftime("%d/%m/%Y"))
-  #   expect(account.arr).to eq([[date.strftime("%d/%m/%Y"), 500, "", 500], [date.strftime("%d/%m/%Y"), "", 200, 300]])
-  # end
+  it 'Adds transactions to array' do
+    account.deposit(500, date.strftime("%d/%m/%Y"))
+    account.withdraw(200, date.strftime("%d/%m/%Y"))
+    expect(account.arr.length).to eq(2)
+  end
 end
