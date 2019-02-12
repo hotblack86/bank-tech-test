@@ -1,9 +1,9 @@
-Bank Tech Test
-Makers Academy week 10 tech test - showcasing OO design and TDD skills.
+Bank Tech Test\
+Makers Academy week 10 tech test - showcasing OO design and TDD skills.\
 
-A command line application replicating basic banking functionality. 
-A user can make deposits and withdrawals and view their account balance.
-They can also view a statement containing the above features printed in reverse chronological order.
+A command line application replicating basic banking functionality.\ 
+A user can make deposits and withdrawals and view their account balance.\
+They can also view a statement containing the above features printed in reverse chronological order.\
 
 Installation
 $ git clone https://github.com/hotblack86/bank-tech-test
