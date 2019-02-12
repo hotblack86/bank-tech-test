@@ -4,8 +4,7 @@ require 'terminal-table'
 
 describe Account do
   let(:account) { Account.new }
-  let(:date)  { Timecop.freeze Date.new(2019,2,11) }
-
+  let(:date) { Timecop.freeze Date.new(2019, 2, 11) }
 
   it 'Initializes with a balance of zero' do
     expect(account.balance).to eq(0)

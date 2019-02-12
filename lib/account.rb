@@ -2,7 +2,7 @@ require 'terminal-table'
 
 class Account
 
-attr_reader :balance, :arr
+  attr_reader :balance, :arr
 
   def initialize(balance = 0)
     @balance = balance
@@ -11,13 +11,13 @@ attr_reader :balance, :arr
 
   def deposit(credit, date = Time.now)
     @balance += credit
-    @arr << [date = Time.now, credit, "", balance = @balance]
+    @arr << [date, credit, "", @balance]
     p "You deposited £#{credit} on #{date}"
   end
 
   def withdraw(debit, date = Time.now)
     @balance -= debit
-    @arr << [date = Time.now, "", debit, balance = @balance]
+    @arr << [date, "", debit, @balance]
     p "You withdrew £#{debit} on #{date}"
   end
 
@@ -30,8 +30,8 @@ attr_reader :balance, :arr
     @arr.reverse.each do |x|
       rows << x
     end
-      table = Terminal::Table.new :title => "Statement",
-      :headings => ['Date', 'Credit', 'Debit', 'Balance'], :rows => rows
+    table = Terminal::Table.new :title => "Statement",
+    :headings => ['Date', 'Credit', 'Debit', 'Balance'], :rows => rows
     puts table
   end
 end

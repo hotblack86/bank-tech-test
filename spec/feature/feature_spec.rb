@@ -4,7 +4,7 @@ require 'terminal-table'
 
 describe Account do
   let(:account) { Account.new }
-  let(:date)  { Timecop.freeze Date.new(2019,2,11) }
+  let(:date)  { Timecop.freeze Date.new(2019, 2, 11) }
 
   
   it 'Feature 1 - User can make a deposit' do
@@ -24,7 +24,7 @@ describe Account do
     expect { account.show_balance }.to output("\"Available Funds: £300\"\n").to_stdout
   end
 
-  it 'Feature 4 - User can view statement with with deposits 
+  it 'Features 4,5,6 - User can view statement with with deposits 
     and withdrawals in reverse chronological order' do
     account.deposit(500, :date)
     account.withdraw(200, :date)
