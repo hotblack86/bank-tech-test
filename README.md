@@ -1,4 +1,4 @@
-# H1 Bank Tech Test
+#   Bank Tech Test
 
 Makers Academy week 10 tech test - showcasing OO design and TDD skills.
 
@@ -10,7 +10,7 @@ They can also view a statement containing the above features printed in reverse 
 
 ---
 
-## H2 Installation
+##   Installation
 
 $ git clone https://github.com/hotblack86/bank-tech-test
 
@@ -24,7 +24,7 @@ $ rubocop # To confirm the code is fully linted
 
 ---
 
-## H2 How to Use
+##   How to Use
 
 This app is run entirely from the command line. To begin:
 
@@ -44,34 +44,34 @@ $ account.print_statement # Prints out a statement with a list of all transactio
 
 ---
 
-## H2 User Stories
+##  User Stories
 
 
-As a user
-To keep my money safe
+As a user<br/>
+To keep my money safe<br/>
 I can deposit cash into my account
 
 
-As a user
-So I have access to cash
+As a user<br/>
+So I have access to cash<br/>
 I can withdraw cash from my account
 
 
-As a user 
-So I find out my account balance
-I can print a statement
+As a user<br/> 
+To avoid becoming overdrawn<br/>
+I can view my account balance
 
 
-As a user
-So I can keep track of my deposits
+As a user<br/>
+So I can keep track of my deposits<br/>
 They appear when I print my statement
 
 
-As a user 
-So I can keep track of my withdrawals
+As a user<br/> 
+So I can keep track of my withdrawals<br/>
 They appear when I print my statement
 
 
-As a user
-So I can see my most recent activity first
+As a user<br/>
+So I can see my most recent activity first<br/>
 Withdrawals and deposits appear in reverse chronological order
