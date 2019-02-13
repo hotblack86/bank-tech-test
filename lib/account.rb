@@ -2,7 +2,7 @@ require 'terminal-table'
 
 class Account
 
-  attr_reader :balance, :arr
+  attr_reader :balance, :arr, :rows
 
   def initialize(balance = 0)
     @balance = balance
@@ -26,12 +26,20 @@ class Account
   end
 
   def print_statement
-    rows = []
-    @arr.reverse.each do |x|
-      rows << x
-    end
+    order_transactions
     table = Terminal::Table.new :title => "Statement",
-    :headings => ['Date', 'Credit', 'Debit', 'Balance'], :rows => rows
+    :headings => ['Date', 'Credit', 'Debit', 'Balance'], :rows => @rows
     puts table
   end
+
+  private
+
+  def order_transactions
+    @rows = []
+    @arr.reverse.each do |x|
+      @rows << x
+    end
+    return @rows
+  end
+
 end

@@ -28,6 +28,15 @@ describe Account do
   it 'Adds transactions to array' do
     account.deposit(500, date.strftime("%d/%m/%Y"))
     account.withdraw(200, date.strftime("%d/%m/%Y"))
-    expect(account.arr.length).to eq(2)
+    expect(account.arr[0]).to eq(["11/02/2019", 500, "", 500])
+    expect(account.arr[1]).to eq(["11/02/2019", "", 200, 300])
+  end
+
+  it 'Orders transactions in reverse chronological order' do
+    account.deposit(500, date.strftime("%d/%m/%Y"))
+    account.withdraw(200, date.strftime("%d/%m/%Y"))
+    account.print_statement
+    expect(account.rows[0]).to eq(["11/02/2019", "", 200, 300])
+    expect(account.rows[1]).to eq(["11/02/2019", 500, "", 500])
   end
 end
