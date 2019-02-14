@@ -8,6 +8,7 @@ class Account
   def initialize(balance = 0)
     @balance = balance
     @transactions = []
+    $data = @transactions
   end
 
   def deposit(transaction = Transaction.new)
@@ -24,23 +25,6 @@ class Account
 
   def show_balance
     p "Available Funds: £#{@balance}"
-  end
-
-  def print_statement
-    order_transactions
-    table = Terminal::Table.new :title => "Statement",
-    :headings => ['Date', 'Credit', 'Debit', 'Balance'], :rows => @rows
-    puts table
-  end
-
-  private
-
-  def order_transactions
-    @rows = []
-    @transactions.reverse.each do |x|
-      @rows << x
-    end
-    return @rows
   end
 
 end

@@ -37,11 +37,5 @@ describe Account do
     expect(account.transactions[1]).to eq(["11/02/2019", "", 200, 300])
   end
 
-  it 'Orders transactions in reverse chronological order' do
-    account.deposit(transaction1)
-    account.withdraw(transaction2)
-    account.print_statement
-    expect(account.rows[0]).to eq(["11/02/2019", "", 200, 300])
-    expect(account.rows[1]).to eq(["11/02/2019", 500, "", 500])
-  end
+  
 end

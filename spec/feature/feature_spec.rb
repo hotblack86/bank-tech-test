@@ -7,7 +7,8 @@ describe Account do
   let(:account) { Account.new }
   let(:transaction1) { Transaction.new(500, date) }
   let(:transaction2) { Transaction.new(200, date) }
-  let(:date)  { Timecop.freeze Date.new(2019, 2, 11) }
+  let(:date) { Timecop.freeze Date.new(2019, 2, 11) }
+  let(:statement) { Statement.new }
 
   
   it 'Feature 1 - User can make a deposit' do
@@ -31,7 +32,7 @@ describe Account do
     and withdrawals in reverse chronological order' do
     account.deposit(transaction1)
     account.deposit(transaction2)
-    expect { account.print_statement }.to output.to_stdout
+    expect { statement.print_statement }.to output.to_stdout
   end
 
 end
