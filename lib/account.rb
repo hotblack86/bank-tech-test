@@ -2,22 +2,22 @@ require 'terminal-table'
 
 class Account
 
-  attr_reader :balance, :arr, :rows
+  attr_reader :balance, :transactions, :rows
 
   def initialize(balance = 0)
     @balance = balance
-    @arr = []
+    @transactions = []
   end
 
   def deposit(credit, date = Time.now)
     @balance += credit
-    @arr << [date, credit, "", @balance]
+    @transactions << [date, credit, "", @balance]
     p "You deposited £#{credit} on #{date}"
   end
 
   def withdraw(debit, date = Time.now)
     @balance -= debit
-    @arr << [date, "", debit, @balance]
+    @transactions << [date, "", debit, @balance]
     p "You withdrew £#{debit} on #{date}"
   end
 
@@ -36,7 +36,7 @@ class Account
 
   def order_transactions
     @rows = []
-    @arr.reverse.each do |x|
+    @transactions.reverse.each do |x|
       @rows << x
     end
     return @rows
