@@ -12,7 +12,7 @@ describe Transaction do
     expect(transaction.amount).to eq(500)
   end
 
-  it 'transaction has a value' do
+  it 'transaction has a date' do
     expect(transaction.date).to eq(date)
   end
 

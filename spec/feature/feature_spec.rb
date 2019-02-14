@@ -29,8 +29,8 @@ describe Account do
 
   it 'Features 4,5,6 - User can view statement with with deposits 
     and withdrawals in reverse chronological order' do
-    account.deposit(500)
-    account.withdraw(200)
+    account.deposit(transaction1)
+    account.deposit(transaction2)
     expect { account.print_statement }.to output.to_stdout
   end
 

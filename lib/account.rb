@@ -12,13 +12,13 @@ class Account
 
   def deposit(transaction = Transaction.new)
     @balance += transaction.amount
-    #@transactions << [date, credit, "", @balance]
+    @transactions << [transaction.date, transaction.amount, "", @balance]
     p "You deposited £#{transaction.amount} on #{transaction.date}"
   end
 
   def withdraw(transaction = Transaction.new)
     @balance -= transaction.amount
-    #@transactions << [date, "", debit, @balance]
+    @transactions << [transaction.date, "", transaction.amount, @balance]
     p "You withdrew £#{transaction.amount} on #{transaction.date}"
   end
 
