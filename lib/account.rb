@@ -1,4 +1,5 @@
 require 'terminal-table'
+require './lib/transaction.rb'
 
 class Account
 
@@ -9,16 +10,16 @@ class Account
     @transactions = []
   end
 
-  def deposit(credit, date = Time.now)
-    @balance += credit
-    @transactions << [date, credit, "", @balance]
-    p "You deposited £#{credit} on #{date}"
+  def deposit(transaction = Transaction.new)
+    @balance += transaction.amount
+    #@transactions << [date, credit, "", @balance]
+    p "You deposited £#{transaction.amount} on #{transaction.date}"
   end
 
-  def withdraw(debit, date = Time.now)
-    @balance -= debit
-    @transactions << [date, "", debit, @balance]
-    p "You withdrew £#{debit} on #{date}"
+  def withdraw(transaction = Transaction.new)
+    @balance -= transaction.amount
+    #@transactions << [date, "", debit, @balance]
+    p "You withdrew £#{transaction.amount} on #{transaction.date}"
   end
 
   def show_balance

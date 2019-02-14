@@ -1,10 +1,14 @@
 require 'account.rb'
+require 'transaction.rb'
+
 require 'timecop'
 require 'terminal-table'
 
 describe Account do
-  let(:account) { Account.new }
   let(:date) { Timecop.freeze Date.new(2019, 2, 11) }
+  let(:account) { Account.new }
+  let(:transaction) { Transaction.new(500, date) }
+  
 
   it 'Initializes with a balance of zero' do
     expect(account.balance).to eq(0)
@@ -15,7 +19,7 @@ describe Account do
   end
 
   it 'Deposit method adds money to balance' do
-    account.deposit(500)
+    account.deposit(transaction)
     expect(account.balance).to eq(500)
   end
 
