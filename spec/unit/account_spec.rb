@@ -10,7 +10,7 @@ describe Account do
     expect(account.balance).to eq(0)
   end
 
-  it 'Initializes with no transactions completed' do
+  it 'Initializes with no transactions' do
     expect(account.transactions).to eq([])
   end
 
