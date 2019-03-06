@@ -30,17 +30,23 @@ This app is run entirely from the command line. To begin:
 
 $ irb
 
-$ require './lib/account.rb'
+$ require './lib/statement.rb'
+
+$ x = Transaction.new(500)
+
+$ y = Transaction.new(200) # where arguement x and y can be either a deposit or withdrawal and arguement is amount of user's choosing
 
 $ account = Account.new
 
-$ account.deposit(amount) # Deposits money into in your account where amount is an integer of the users choosing.
+$ account.deposit(x) # Deposits 500 into in your account
 
-$ account.withdraw(amount) # Withdraws money from your account
+$ account.withdraw(y) # Withdraws 200 from your account
 
 $ account.show_balance # Displays your available funds
 
-$ account.print_statement # Prints out a statement with a list of all transactions
+$ statement = Statement.new
+
+$ statement.print_statement # Prints out a statement with a list of all transactions
 
 ---
 
