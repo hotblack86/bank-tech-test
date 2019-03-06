@@ -15,10 +15,6 @@ describe Account do
     expect(account.balance).to eq(0)
   end
 
-  it 'Initializes with no transactions' do
-    expect(account.transactions).to eq([])
-  end
-
   it 'Deposit method adds money to balance' do
     account.deposit(transaction1)
     expect(account.balance).to eq(500)
@@ -29,13 +25,5 @@ describe Account do
     account.withdraw(transaction2)
     expect(account.balance).to eq(300)
   end
-
-  it 'Adds transactions to array' do
-    account.deposit(transaction1)
-    account.withdraw(transaction2)
-    expect(account.transactions[0]).to eq(["11/02/2019", 500, "", 500])
-    expect(account.transactions[1]).to eq(["11/02/2019", "", 200, 300])
-  end
-
-  
+ 
 end

@@ -1,25 +1,24 @@
 require 'terminal-table'
 require './lib/transaction.rb'
+require './lib/statement.rb'
 
 class Account
 
-  attr_reader :balance, :transactions, :rows
+  attr_reader :balance, :transactions
 
   def initialize(balance = 0)
     @balance = balance
-    @transactions = []
-    $data = @transactions
   end
 
-  def deposit(transaction = Transaction.new)
+  def deposit(transaction = Transaction.new(amount), statement = Statement.new)
     @balance += transaction.amount
-    @transactions << [transaction.date, transaction.amount, "", @balance]
+    statement.transactions << [transaction.date, transaction.amount, "", @balance]
     p "You deposited £#{transaction.amount} on #{transaction.date}"
   end
 
-  def withdraw(transaction = Transaction.new)
+  def withdraw(transaction = Transaction.new(amount), statement = Statement.new)
     @balance -= transaction.amount
-    @transactions << [transaction.date, "", transaction.amount, @balance]
+    statement.transactions << [transaction.date, "", transaction.amount, @balance]
     p "You withdrew £#{transaction.amount} on #{transaction.date}"
   end
 

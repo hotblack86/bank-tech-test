@@ -8,11 +8,11 @@ describe Transaction do
   let(:transaction) { Transaction.new(500, date) }
   let(:date) { Timecop.freeze Date.new(2019, 2, 11) }
   
-  it 'transaction has a value' do
+  it 'Transaction has a value' do
     expect(transaction.amount).to eq(500)
   end
 
-  it 'transaction has a date' do
+  it 'Transaction has a date' do
     expect(transaction.date).to eq(date)
   end
 

@@ -7,7 +7,7 @@ class Statement
   attr_reader :transactions, :rows
 
   def initialize
-    @transactions = $data
+    @transactions = []
   end
 
   def print_statement
