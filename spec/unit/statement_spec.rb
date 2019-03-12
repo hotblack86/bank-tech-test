@@ -11,10 +11,6 @@ describe Statement do
   let(:transaction2) { Transaction.new(200, date.strftime("%d/%m/%Y")) }
   let(:statement) { Statement.new }
 
-  it 'Initializes with an empty array of transactions' do
-    expect(statement.transactions.length).to eq(0)
-  end
-
   it 'Adds transactions to the list of transactions' do
     account.deposit(transaction1, statement)
     account.withdraw(transaction2, statement)

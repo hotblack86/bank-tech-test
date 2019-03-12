@@ -9,11 +9,6 @@ describe Account do
   let(:account) { Account.new }
   let(:transaction1) { Transaction.new(500, date.strftime("%d/%m/%Y")) }
   let(:transaction2) { Transaction.new(200, date.strftime("%d/%m/%Y")) }
-  
-
-  it 'Initializes with a balance of zero' do
-    expect(account.balance).to eq(0)
-  end
 
   it 'Deposit method adds money to balance' do
     account.deposit(transaction1)
